@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title id="page-title">Математичний Кросворд</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Game Title -->
+    <h1 id="game-title">Математичний Кросворд</h1>
+
+    <!-- Top control bar -->
+    <div class="top-bar">
+      <div>
+        <!-- Level selection -->
+        <label for="levelSelect" id="level-label">Рівень:</label>
+        <select id="levelSelect"></select>
+      </div>
+
+      <div class="top-buttons">
+        <!-- Language switch (ENG | UKR) -->
+        <div class="lang-switch" id="langToggle" 
+             role="switch" tabindex="0" aria-checked="true" 
+             aria-label="Switch language">
+         <div id="langEng" class="lang-option">ENG</div>
+<div id="langUkr" class="lang-option">UKR</div>
+<div id="langSlider" class="lang-slider"></div>
+
+        </div>
+
+        <!-- Help button -->
+        <button id="helpToggle" title="Допомога">?</button>
+        <!-- Theme switch (Light / Dark) -->
+        <button id="themeToggle" title="Змінити тему">🌙</button>
+      </div>
+    </div>
+
+    <!-- Help modal window -->
+    <div id="helpModal" class="modal hidden" role="dialog" 
+         aria-modal="true" aria-labelledby="help-title" aria-describedby="help-text">
+      <div class="modal-content">
+        <button id="closeHelp" class="close-btn" aria-label="Закрити допомогу">&times;</button>
+        <h2 id="help-title">Як грати в Математичний Кросворд</h2>
+        <p id="help-text">
+          Обирай рівень гри у випадаючому списку.<br />
+          Перед тобою - рядки з прикладами, в яких пропущені числа.<br />
+          Твоє завдання - заповнити порожні клітинки, використовуючи кнопки з цифрами внизу.<br />
+          Після заповнення всіх клітинок натискай кнопку <strong>Перевірити</strong>.<br />
+          Якщо всі відповіді правильні - отримаєш вітання і зможеш перейти далі.<br />
+          Насолоджуйся грою і прокачуй свої математичні навички!
+        </p>
+      </div>
+    </div>
+
+    <!-- Puzzle grid -->
+    <div class="grid" id="puzzle-grid" aria-label="Game field"></div>
+
+    <!-- Number input buttons -->
+    <div class="number-buttons" id="number-buttons" aria-label="Number input buttons"></div>
+
+    <!-- Check button and result -->
+    <button id="check-btn">Перевірити</button>
+    <p id="result"></p>
+  </div>
+
+  <!-- JavaScript logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>
